@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <!--para cambiar font como la de instagram-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <title>Instagram Feed con bootstrap</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <div class="Instagram_Logo">
+            <i class="fa-brands fa-instagram fa-lg fw-bold"></i>
+            <a class="navbar-brand col-9" href="#"><b>Instagram</b></a>
+          </div>
+
+          <div class="botonx2">
+            <!-- Botón para activar el  modal y crear una nueva publicación-->
+            <button type="button" id="create" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Create a new post</button>        
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Caption:</label>
+                      <textarea class="form-control text-secondary" id="exampleFormControlTextarea1" rows="2">Add the caption of your post here</textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-light border" id="camera"><i class="fa-solid fa-camera"></i></button>
+                    <button type="button" class="btn btn-light border" id="position"><i class="fa-solid fa-location-dot"></i></button>
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" id="publish" class="btn btn-success">Publish</button>
+                  </div>              
+                </div>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                <i class="fas fa-cog"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                <li><a class="dropdown-item border-bottom pb-2" id="privacy" href="#">Privacy and Data</a></li>
+                <li><a class="dropdown-item text-danger mt-2" id="exit" href="#">Log out</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+    </div>
+
+    <div class="cuerpo">
+        <ul class="nav nav-pills mb-3 d-flex justify-content-center mt-2" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button class="btn" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" href="#grid1">
+                <i class="fas fa-th"></i>
+            </button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="btn" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" href="#grid2"> 
+                <i class="fas fa-square"></i>
+            </button>
+            </li>
+        </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <!--Botón Pantalla 1-->
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <!--Contenido Pantalla 1-->
+            <div class="container-fluid">
+              <div class="row mb-2 gx-2">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="tailandia1" class="img-fluid h-100" src="https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="bora" class="img-fluid h-100" src="https://imgs.search.brave.com/rDJ1PxbX1d0WujW62KjVc16wloATVCfqlp_JxwHv0Ew/rs:fit:1200:1000:1/g:ce/aHR0cDovLzEuYnAu/YmxvZ3Nwb3QuY29t/Ly01cE5CSkFKQUpE/NC9VVzAwdy1qdjhf/SS9BQUFBQUFBQURQ/NC82elBfeVAzOGlC/dy9zMTYwMC9QR19C/b3JhX0JvcmFfTW90/dS5qcGc">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="tailandia2" class="img-fluid w-50px" src="https://imgs.search.brave.com/b72PXLr0jt0CJnvACyil1U245tYSG3lvmvJot_mjCiA/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9ob2xp/ZGF5dHVybi5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTcv/MDgvMS0yLmpwZw">
+                </div>
+              </div>
+              <div class="row mb-2 gx-2">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="polinesia" class="img-fluid h-100" src="https://imgs.search.brave.com/2oyE4xCTU6NWD_F90Bit8O6xgQozAtpSS3Qz9tY6Ga0/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/YXNwYXNpYWRpdmUu/ZXMvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMTAvYXNwYXNp/YS1kaXZlLV8tcG9s/aW5lc2lhLWZyYW5j/ZXNhLV8taXNsYXMt/ZGUtbGEtc29jaWVk/YWQtXy10dWFtb3R1/LV8tdG9wLWRpdmUt/Xy1pbnRlci1pc2xh/bmRzLXBhc3MtZ29s/ZC1fLXRhaGl0aS1f/LW1vb3JlYS1fLXRl/dGlhcm9hLV8tcmFu/Z2lyb2EtXy1mYWth/cmF2YS1fLWJ1Y2Vv/LV8tZGl2aW5nLV8t/dmlhamVzLWRlLWJ1/Y2VvLTguanBn">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="tailandia3" class="img-fluid h-100" src="https://imgs.search.brave.com/W86yI3pBknmasg_MJakiRZQDY6yHQGNKnQ2Hy9N2PvA/rs:fit:1200:836:1/g:ce/aHR0cHM6Ly93d3cu/b25kZS1lLXF1YW5k/by5uZXQvc2l0ZS9p/bWFnZXMvaWxsdXN0/cmF0aW9uL3RoYWls/YW5kZV81MDIuanBn">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="tailandia4" class="img-fluid h-100" src="https://imgs.search.brave.com/O5qORsLlDPbr8uOtCLuNjfH040aPTFybg4Cf27uz7CM/rs:fit:1100:733:1/g:ce/aHR0cHM6Ly9maWxp/cGluYXN2aWFqYXIu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDE5LzAxL2ZpbGlw/aW5hcy5qcGc">
+                </div>
+              </div>
+              <div class="row mb-3 gx-2">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="tailandia" class="img-fluid h-100" src="https://imgs.search.brave.com/3XdxVGVtQrCRGlxlrz7d4L0vwt7f23FFL1tVS4cZrMw/rs:fit:1200:922:1/g:ce/aHR0cHM6Ly92aWFq/ZXMubmF0aW9uYWxn/ZW9ncmFwaGljLmNv/bS5lcy9tZWRpby8y/MDE4LzA1LzE4L3Bs/YXlhLWRlLWtpYW4t/Z2lhbmctaXNsYS1k/ZS1uYW0tZHVfMGQ2/ZTYwMTUuanBn">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="vietnam" class="img-fluid h-100" src="https://imgs.search.brave.com/_RJloo5VxrYLn2eX0rrz4w5-NhuIODpGKgLrzeB8Yz8/rs:fit:1024:640:1/g:ce/aHR0cHM6Ly92aWV0/bmFtbm9tYWQuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIw/LzA0L0Jlc3QtcGxh/Y2VzLXRvLXZpc2l0/LWluLVZpZXRuYW0t/aW4tMjAyMS1IYS1M/b25nLUJheS0xMDI0/eDY0MC5qcGc">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                  <img alt="vietnam1" class="img-fluid h-100" src="https://imgs.search.brave.com/-zb73s8SulBKTZRQnhgsGh2coaaZZXkSC043fy5Ff1g/rs:fit:1200:1000:1/g:ce/aHR0cDovL2FuZWth/dGVtcGF0d2lzYXRh/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAxNS8wOS9IYS1M/b25nLUJheS5qcGc">
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--Botón Pantalla 2-->
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <!--Contenido Pantalla 2-->
+        <div class="container-fluid d-flex flex-column align-items-center">
+                <div class="col-12 mb-4" style="width: 800px;">
+                    <div class="card-header bg-white d-flex flex-row align-items-center py-0 px-0">
+                        <div class="col-sm-11 col-md-11 col-lg-11 ps-2">
+                            <h5 class="card-title">Tailandia</h5>
+                        </div>
+                        <div class="col-sm-1 col-md-1 col-lg-1">
+                            <p class="data">15/09</p>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <img class="img-fluid" src="https://imgs.search.brave.com/EaTfM9rleMdWOq0aZoj-4Xe0fFOhhtqccfQqnZlraMQ/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9leGNs/dXNpdmVzbWVkaWEu/d2ViamV0LmNvLm56/L3VwbG9hZHMvMjAx/Ny8wNy9TaWFtLUdl/bXMtQmVhY2gtQnJl/YWstMi1taW4uanBn" alt="Foto1">
+                    </div>
+                    <div class="card-footer bg-white">
+                        <p class="likes mb-0"><b>500 Likes</b></p>
+                        <p class="card-text mb-2">Thailand is one of the world's most renowned holiday destinations, with a wide variety of things to see and do, from culture, religion, food, nature, water, adventure, sports and also relaxing activities.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 card mb-4" style="width: 800px;">
+                    <div class="card-header bg-white d-flex flex-row align-items-center py-0 px-0">
+                        <div class="col-11 ps-2">
+                            <h5 class="card-title">Bora Bora</h5>
+                        </div>
+                        <div class="col-1 flex-end">
+                            <p class="data">10/08</p>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <img class="img-fluid" src="https://imgs.search.brave.com/rDJ1PxbX1d0WujW62KjVc16wloATVCfqlp_JxwHv0Ew/rs:fit:1200:1000:1/g:ce/aHR0cDovLzEuYnAu/YmxvZ3Nwb3QuY29t/Ly01cE5CSkFKQUpE/NC9VVzAwdy1qdjhf/SS9BQUFBQUFBQURQ/NC82elBfeVAzOGlC/dy9zMTYwMC9QR19C/b3JhX0JvcmFfTW90/dS5qcGc" alt="Foto2">
+                    </div>
+                    <div class="card-footer bg-white">
+                        <p class="likes mb-0"><b>296 Likes</b></p>
+                        <p class="card-text mb-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+              <div class="col-12 card mb-4" style="width: 800px;">
+                <div class="card-header bg-white d-flex flex-row align-items-center py-0 px-0">
+                    <div class="col-11 ps-2">
+                        <h5 class="card-title">Maldivas</h5>
+                    </div>
+                    <div class="col-1">
+                        <p class="data">2/07</p>
+                    </div>
+                </div>
+                  <div class="card-body p-0">
+                    <img class="img-fluid w-100" src="https://imgs.search.brave.com/b72PXLr0jt0CJnvACyil1U245tYSG3lvmvJot_mjCiA/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9ob2xp/ZGF5dHVybi5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTcv/MDgvMS0yLmpwZw" alt="Foto3">
+                  </div>
+                  <div class="card-footer bg-white">
+                    <p class="likes mb-0"><b>890 Likes</b></p>
+                    <p class="card-text mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime nihil perspiciatis ducimus id ratione perferendis libero incidunt est provident. Dolore vitae repellendus assumenda nobis, in vel illo dicta harum itaque?</p>
+                  </div>
+              </div>
+        </div>
+
+          </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/2d5b10a44a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  </body>
+</html>
